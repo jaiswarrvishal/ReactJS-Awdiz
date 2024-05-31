@@ -9,6 +9,7 @@ import NotFound from './26-05/NotFound';
 import UseState2 from './26-05/UseState2';
 import UseEffect from './26-05/UseEffect1';
 import UseEffect2 from './26-05/UseEffect2';
+import UseEffect3 from './29-05/UseEffect3';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path='/use-state2' element={<UseState2 />}/>
         <Route path='/use-effect' element={<UseEffect />}/>
         <Route path='/use-effect2' element={<UseEffect2 />}/>
+        <Route path='/use-effect3' element={<UseEffect3 />}/>
       </Routes>
     </div>
   );
