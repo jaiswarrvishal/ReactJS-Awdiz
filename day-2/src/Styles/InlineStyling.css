@@ -1,0 +1,9 @@
+.testClassName{
+    color: green;
+    font-size: 40px;
+}
+#testingId{
+    color: Orange;
+    font-size: 30px;
+    font-weight: 500;
+}

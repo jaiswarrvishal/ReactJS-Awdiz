@@ -6,6 +6,9 @@ import Routing from './30-05/Routing';
 import UserDetail from './30-05/UserDetail';
 import Mapping from './02-06/Mapping';
 import Allproducts from './02-06/Allproducts';
+import FunctionProp from './04-06/FunctionProp';
+import StyledComponent from './04-06/StyledComponent';
+import InlineStyling from './04-06/InlineStyling';
 
 function App() {
   return (
@@ -17,8 +20,14 @@ function App() {
         <Route path="/user/:username" element={<UserDetail />} />
         {/* <Route path="/user/:username/:id" element={<UserDetail />} /> */}
         
-        <Route path="/mapping" element={<Mapping  students={["Hinata", "Soyo", "Oikawa"]} />} />
+        <Route path="/mapping" element={<Mapping  students={["Hinata", "Shoyo", "Oikawa"]} />} />
         <Route path="/all-products" element={<Allproducts />} />
+
+        <Route path="/function-prop" element={<FunctionProp />} />
+        <Route path="/styled-component" element={<StyledComponent />} />
+        <Route path="/inline-styling" element={<InlineStyling />} />
+        
+
       </Routes>
     </div>
   );
