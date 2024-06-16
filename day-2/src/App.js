@@ -11,6 +11,7 @@ import StyledComponent from './04-06/StyledComponent';
 import InlineStyling from './04-06/InlineStyling';
 import Todo from './06-06/Todo';
 import Register from './08-06/Register';
+import Reducer from './15-06/Reducer';
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/inline-styling" element={<InlineStyling />} />
         <Route path="/to-do" element={<Todo />} />
         <Route path="/register" element={<Register />} />
+        <Route path="/reducer" element={<Reducer />} />
         
 
       </Routes>
