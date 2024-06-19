@@ -1,17 +1,18 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import toast from "react-hot-toast";
+import { AuthContext } from "../context/auth.context";
+// import axios from "axios";
 
-const Register = () => {
+const Login = () => {
+
+    const { state, dispatch } = useContext(AuthContext) 
+
   const router = useNavigate();
   const [userData, setUserData] = useState({
-    name: "",
     email: "",
     password: "",
   });
-  const [errors, setErrors] = useState([]);
-  const [disable, setDisable] = useState(true);
-  console.log(errors, "errors");
 
   console.log(userData, "userData");
   function handleChange(event) {
@@ -24,18 +25,21 @@ const Register = () => {
     e.preventDefault();
     // api call to backend
     try {
-      if (userData.name && userData.email && userData.password) {
-        //   const response = await axios.post("https://awdiz-7/api/v1/user/register" , {userData});
+      if (userData.email && userData.password) {
+        //   const response = await axios.post("https://awdiz-7/api/v1/user/login" , {userData});
         const response = {
-          data: { success: true, message: "Regsiter successfull." },
+          data: { success: true, message: "Login successfull.", userData: {name: "Vishal"} },
         };
+
         if (response.data.success) {
+
+            dispatch({ type: "LOGIN", payload: response.data.userData})
+
           setUserData({
-            name: "",
             email: "",
             password: "",
           });
-          router("/login");
+          router("/");
           toast.success(response.data.message);
         }
       } else {
@@ -50,38 +54,10 @@ const Register = () => {
     }
   }
 
-  useEffect(() => {
-    const errorsArray = [];
-    if (!userData.name) {
-      errorsArray.push("Name is required.");
-    }
-    if (!userData.email) {
-      errorsArray.push("Email is required.");
-    }
-    if (!userData.password) {
-      errorsArray.push("Password is required.");
-    }
-    setErrors(errorsArray);
-    if (errorsArray.length === 0) {
-      setDisable(false);
-    } else {
-      setDisable(true);
-    }
-  }, [userData]);
-
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <h1>Register</h1>
-        <label>Name : </label>
-        <br />
-        <input
-          type="text"
-          onChange={handleChange}
-          name="name"
-          value={userData.name}
-        />
-        <br />
+        <h1>Login</h1>
         <label>Email : </label>
         <br />
         <input
@@ -100,18 +76,11 @@ const Register = () => {
           value={userData.password}
         />
         <br />
-        {errors.length > 0 && (
-          <div>
-            {errors.map((error, i) => (
-              <p key={i}>{error}*</p>
-            ))}
-          </div>
-        )}
-        <input disabled={disable} type="submit" value="Register" />
+        <input type="submit" value="Login" />
         <br />
       </form>
     </div>
   );
 };
 
-export default Register;
+export default Login;

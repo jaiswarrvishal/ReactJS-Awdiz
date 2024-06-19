@@ -12,6 +12,9 @@ import InlineStyling from './04-06/InlineStyling';
 import Todo from './06-06/Todo';
 import Register from './08-06/Register';
 import Reducer from './15-06/Reducer';
+import Login from './08-06/Login';
+import Counter from './15-06/useState';
+// import Counter from './15-06/Counter';
 
 function App() {
   return (
@@ -19,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="*" element={<NotFound />} />
+        <Route path="login" element={<Login />} />
         <Route path="/use-navigate" element={<Routing />} />
         <Route path="/user/:username" element={<UserDetail />} />
         {/* <Route path="/user/:username/:id" element={<UserDetail />} /> */}
@@ -32,6 +36,7 @@ function App() {
         <Route path="/to-do" element={<Todo />} />
         <Route path="/register" element={<Register />} />
         <Route path="/reducer" element={<Reducer />} />
+        <Route path="/counter" element={<Counter />} />
         
 
       </Routes>
