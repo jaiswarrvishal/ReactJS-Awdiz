@@ -28,7 +28,12 @@ const Login = () => {
       if (userData.email && userData.password) {
         //   const response = await axios.post("https://awdiz-7/api/v1/user/login" , {userData});
         const response = {
-          data: { success: true, message: "Login successfull.", userData: {name: "Vishal"} },
+          data: { 
+            success: true, 
+            message: "Login successfull.", 
+            userData: {name: "Vishal"},
+            token: "jwttoken"
+           },
         };
 
         if (response.data.success) {

@@ -7,11 +7,13 @@ import { BrowserRouter } from 'react-router-dom';
 import MyContextProvider from './context/auth.context';
 import { Toaster } from 'react-hot-toast';
 import CounterContextProvider from './context/coutner.context';
+import ThemeContextProvider from './context/theme.context';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <MyContextProvider>
   <CounterContextProvider>
+  <ThemeContextProvider>
   <BrowserRouter>
   <Toaster
   position="top-center"
@@ -40,6 +42,7 @@ root.render(
 />
     <App />
   </BrowserRouter>
+  </ThemeContextProvider>
   </CounterContextProvider>
   </MyContextProvider>
 );
