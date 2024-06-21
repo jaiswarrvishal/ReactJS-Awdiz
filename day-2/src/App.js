@@ -14,6 +14,7 @@ import Register from './08-06/Register';
 import Reducer from './15-06/Reducer';
 import Login from './08-06/Login';
 import Counter from './15-06/useState';
+import ReduxCounter from './20-06/ReduxCounter';
 // import Counter from './15-06/Counter';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/reducer" element={<Reducer />} />
         <Route path="/counter" element={<Counter />} />
+        <Route path="/redux-counter" element={<ReduxCounter />} />
         
 
       </Routes>
