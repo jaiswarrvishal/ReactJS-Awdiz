@@ -15,6 +15,14 @@ import Reducer from './15-06/Reducer';
 import Login from './08-06/Login';
 import Counter from './15-06/useState';
 import ReduxCounter from './20-06/ReduxCounter';
+import UseCallbackComponent from './29-06/MemoComponent';
+import UseCallbackComponents from './29-06/UseCallbackComponents';
+import UseMemoComponent from './29-06/UseMemoComponent';
+import CounterPrac from './30-06/CounterPrac';
+import Counter1 from './30-06/Counter1';
+import Count from './30-06/Count';
+import UseRefComponent from './30-06/UseRefComponent';
+import UseRef2 from './30-06/UseRef2';
 // import Counter from './15-06/Counter';
 
 function App() {
@@ -39,6 +47,19 @@ function App() {
         <Route path="/reducer" element={<Reducer />} />
         <Route path="/counter" element={<Counter />} />
         <Route path="/redux-counter" element={<ReduxCounter />} />
+
+        
+        <Route path="/memo" element={<UseCallbackComponent />} />
+        
+        <Route path="/use-callback" element={<UseCallbackComponents />} />
+        <Route path="/use-memo" element={<UseMemoComponent />} />
+        
+        <Route path="/counter-prac" element={<CounterPrac />} />
+        <Route path="/counter1" element={<Counter1 />} />
+        <Route path="/count" element={<Count />} />
+        <Route path="/use-ref" element={<UseRefComponent />} />
+        <Route path="/use-ref2" element={<UseRef2 />} />
+
         
 
       </Routes>
